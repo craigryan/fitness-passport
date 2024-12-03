@@ -1,0 +1,37 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "test": "jest",
+    "e2e": "echo \"Error: no end to end tests currently exist\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "api",
+    "typescript",
+    "members",
+    "membership",
+    "details",
+    "visits"
+  ],
+  "author": "Craig Ryan",
+  "license": "ISC",
+  "description": "A GraphQL endpoint to query member details and visitation data",
+  "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^4.2.0",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "jest": "^29.7.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.9.0",
+    "projects": "file:"
+  }
+}

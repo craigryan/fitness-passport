@@ -1,0 +1,14 @@
+# compiled output
+/dist
+/build
+/node_modules
+
+# Tests
+/coverage
+
+# typescript
+*.tsbuildinfo
+
+# bundle
+packages/**/*.d.ts
+packages/**/*.js

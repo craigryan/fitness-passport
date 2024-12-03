@@ -1,0 +1,10 @@
+# Future subgraph: Members
+type Member {
+  email: String!
+  firstName: String!
+  lastName: String!
+}
+
+type Query {
+  member(email: String!): Member
+}
