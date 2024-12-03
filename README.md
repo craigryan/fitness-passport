@@ -48,18 +48,56 @@ $ npm start
 
 Use the Apollo GraphQL Playground to interact with the API:
 
-Open a browser at [localhost:4000](http://localhost:4000) and enter a GQL query, using the following example as a guide:
+Open a browser at [localhost:4000](http://localhost:4000) and select 'Query your server'.
 
-### Example Query
+## Example Queries
+
+From the Apollo SANDBOX web page, navigate to Root -> Query -> member
+
+- select email under Arguments
+- expand Fields and select the email, firstName and lastName fields
+
+This should populate the ExampleQuery panel with a valid query and Variables. Finally, give the **email** variable a valid member email (hint: try 'rob@example.com')
+
+Note refer to this [TEST DATA](./src/data/members.ts) for all available members.
+
+A minimal (member name) query and parameter value will look similar to this:
+
+Operation
 
 ```graphql
-query {
-  member(email: "rob@example.com") {
+query ExampleQuery($email: String!) {
+  member(email: $email) {
+    email
     firstName
     lastName
   }
 }
 ```
+
+Variables
+
+```json
+{
+  "email": "rob@example.com"
+}
+```
+
+Click **ExampleQuery** and the following response payload will be displayed
+
+```json
+{
+  "data": {
+    "member": {
+      "email": "rob@example.com",
+      "firstName": "Rob",
+      "lastName": "Smith"
+    }
+  }
+}
+```
+
+### Extended Queries
 
 # How this project was created
 
@@ -67,8 +105,8 @@ This project was created using the following steps
 
 ```bash
 $ npx tsc --init
-$ npm i typescript ts-node tslib @types/node jest -D
-$ npm i apollo-server graphql
+$ npm i typescript ts-node tslib @types/node jest ts-jest @types/jest -D
+$ npm i @apollo/server @graphql-tools/merge graphql graphql-tag fs
 $ npm i -D @graphql-eslint/eslint-plugin
 $ npm i @types/eslint eslint -D
 $ npm init jest@latest

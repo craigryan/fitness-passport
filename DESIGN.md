@@ -1,10 +1,8 @@
 # Fitness Passport GraphQL endpoint Design
 
-This design takes into consideration the time to market constraints, quality vs delivery trade-offs.
+This design takes into consideration time constraints, focusing on delivery, production readiness and quality over scalability. The current solution is limited to a single GraphQL service endpoint for member queries.
 
-I've outlined the key design decisions and '**TODO**' notes where required to capture the ideal target solution intended for future releases.
-
-The Fitness Passport service will evolve into a federated graph facade pattern, however the current solution is limited to a single GraphQL service.
+Notes marked as '**TODO**' indicate possible future (target) solution options that allow the Fitness Passport service to evolve into a federated graph facade pattern.
 
 This simplified implementation is monolithic with extensibility front of mind.
 
@@ -34,7 +32,7 @@ The **schema** model defines the API/endpoint contract intentionally seperate fr
 
 ## Database
 
-The persistence layer is limited to mocked data, modelled as JSON payloads.
+The persistence layer is limited to mocked data, modelled as JSON payloads. See [TEST DATA](./src/data/members.ts).
 
 ## Quality / Test
 

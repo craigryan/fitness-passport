@@ -1,6 +1,6 @@
-import { Member } from "../models/member";
+import { Member } from "@models/member";
 
-// Mocked member data, placeholder for a downstream service API / DB layer.
+// Mocked member data, placeholder for a downstream DB layer.
 export const MOCK_MEMBERS: Member[] = [
     {
         email: "rob@example.com",
