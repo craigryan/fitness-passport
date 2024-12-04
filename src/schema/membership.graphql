@@ -1,0 +1,6 @@
+# Future subgraph: MembershipDetails
+type MembershipDetails {
+  type: String!
+  startDate: String!
+  endDate: String
+}

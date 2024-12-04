@@ -1,16 +1,16 @@
 # Fitness Passport GraphQL API
 
-This project provides a GraphQL endpoint, allowing our future platform (client) to query a member, their membership details and their visits to Fitness Passport accessible facilities.
+This project provides a GraphQL endpoint, allowing a client to query a member, their membership details and their visits to Fitness Passport accessible facilities.
 
-The [Design](./DESIGN.md) document details the solution, design choices within the existing constraints and future goals and improvements.
+The [Design](./DESIGN.md) document details the solution, design choices within the existing constraints and some future improvements.
 
-The project is delivered as a Zip, you may also access from this [Git repository](https://github.com/craigryan/??)
+The project is delivered as a Zip, you may also access from this [Git repository](https://github.com/craigryan/fitness-passport)
 
 ## Key Features
 
 - Single GraphQL endpoint to query members, membership details and visits
 - Mocked DB layer with members and visits.
-- Simple Apollo Server based stack and playground for querying the API
+- Simple Apollo Server based stack including playground site for querying the API
 
 # Quick Start
 
@@ -31,11 +31,17 @@ $ npm -v
 
 ## Build & Test
 
-To install dependencies and run the test suite, from the command line:
+To install dependencies and run the test suite and display code coverage results, from the command line:
 
 ```bash
 $ npm install
 $ npm test
+```
+
+For linting,
+
+```bash
+$ npm run lint
 ```
 
 ## Run the service
@@ -71,6 +77,15 @@ query ExampleQuery($email: String!) {
     email
     firstName
     lastName
+    membershipDetails {
+      type
+      startDate
+      endDate
+    }
+    visits {
+      facilityName
+      visitDateTime
+    }
   }
 }
 ```
@@ -92,7 +107,11 @@ Click **ExampleQuery** and the following response payload will be displayed
       "email": "rob@example.com",
       "firstName": "Rob",
       "lastName": "Smith"
-    }
+    },
+    "membershipDetails": {
+      ...
+    },
+    "visits": [ ... ]
   }
 }
 ```
@@ -107,7 +126,7 @@ This project was created using the following steps
 $ npx tsc --init
 $ npm i typescript ts-node tslib @types/node jest ts-jest @types/jest -D
 $ npm i @apollo/server @graphql-tools/merge graphql graphql-tag fs
-$ npm i -D @graphql-eslint/eslint-plugin
-$ npm i @types/eslint eslint -D
+$ npm i @types/eslint eslint eslint-plugin-jest eslint-import-resolver-typescript -D
+$ npm i @graphql-eslint/eslint-plugin  -D
 $ npm init jest@latest
 ```

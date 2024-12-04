@@ -1,0 +1,5 @@
+# Future subgraph: Visits
+type Visit {
+  facilityName: String!
+  visitDateTime: String!
+}

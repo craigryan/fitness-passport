@@ -4,3 +4,13 @@ type Member {
   firstName: String!
   lastName: String!
 }
+
+# Simple separation of membership and visits, to assist a future subgraph re-design
+extend type Member {
+  membershipDetails: MembershipDetails!
+  visits: [Visit!]!
+}
+
+type Query {
+  member(email: String!): Member
+}

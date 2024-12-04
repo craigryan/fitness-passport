@@ -34,7 +34,8 @@
       "@/*": ["./*"],
       "@models/*": ["./src/models/*"],
       "@schema/*": ["./src/schema/*"],
-      "@resolvers/*": ["./src/resolvers/*"]
+      "@resolvers/*": ["./src/resolvers/*"],
+      "@services/*": ["./services/*"]
     },
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -116,7 +117,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "tests/**/*.ts",
   ],
   "exclude": ["node_modules", "dist", "coverage"],
 }

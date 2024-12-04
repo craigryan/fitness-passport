@@ -20,7 +20,7 @@ const config: Config = {
 
   testRegex: ".*\\.spec\\.ts$",
 
-  testPathIgnorePatterns: ["/node_modules/", "<rootDir>/test/"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
   transform: {
       ".+\\.(t|j)s$": "ts-jest"
   },

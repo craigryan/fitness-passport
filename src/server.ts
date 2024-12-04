@@ -1,21 +1,23 @@
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer, StandaloneServerContextFunctionArgument } from '@apollo/server/standalone';
+import { memberTypeDefs } from './schema/schema';
+import { resolvers } from './modules/members/memberResolvers';
+
 /**
  * Initializes and starts the Apollo GraphQL server for the Fitness Passport Members service.
+ * 
+ * Once started, open the browser http://localhost:4000 (default) to access the GraphQL Playground.
  * 
  * @module server
  * 
  * @requires @apollo/server
  * @requires ./schema/member
- * @requires ./schema/query
- * @requires ./resolvers/memberResolvers
+ * @requires ./schema/membership
+ * @requires ./schema/visit
+ * @requires ./members/memberResolvers
  * 
  * @constant {number} SERVER_PORT - The port on which the server will listen. This should be moved to a configuration file or environment variable.
  */
-
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer, StandaloneServerContextFunctionArgument } from '@apollo/server/standalone';
-import { memberTypeDefs } from './schema/schema';
-import { resolvers } from './resolvers/memberResolvers';
-
 async function startServer() {
   const server = new ApolloServer({ typeDefs: memberTypeDefs, resolvers });
 

@@ -10,7 +10,7 @@
     "start": "ts-node src/server.ts",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "test:e2e": "echo \"Error: no end to end tests currently exist\" && exit 1"
+    "test:e2e": "echo \"Warn: no end to end tests currently exist\" && exit 1"
   },
   "keywords": [
     "graphql",
@@ -22,11 +22,14 @@
     "visits"
   ],
   "devDependencies": {
-    "@graphql-eslint/eslint-plugin": "^4.2.0",
+    "@graphql-eslint/eslint-plugin": "^3.2.0",
     "@types/eslint": "^9.6.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.1",
-    "eslint": "^9.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "eslint": "8.x.x",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-jest": "^28.8.3",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
