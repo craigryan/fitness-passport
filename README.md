@@ -61,13 +61,13 @@ Open a browser at [localhost:4000](http://localhost:4000) and select 'Query your
 From the Apollo SANDBOX web page, navigate to Root -> Query -> member
 
 - select email under Arguments
-- expand Fields and select the email, firstName and lastName fields
+- expand Fields and select all fields
 
 This should populate the ExampleQuery panel with a valid query and Variables. Finally, give the **email** variable a valid member email (hint: try 'rob@example.com')
 
 Note refer to this [TEST DATA](./src/data/members.ts) for all available members.
 
-A minimal (member name) query and parameter value will look similar to this:
+A complete query and parameter value will look similar to this:
 
 Operation
 
