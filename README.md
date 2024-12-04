@@ -116,8 +116,6 @@ Click **ExampleQuery** and the following response payload will be displayed
 }
 ```
 
-### Extended Queries
-
 # How this project was created
 
 This project was created using the following steps
